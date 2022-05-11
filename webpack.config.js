@@ -1,6 +1,24 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const generateHtmlPlugin = (title) => {
+  return new HtmlWebpackPlugin({
+    title,
+    filename: `${title.toLowerCase()}.html`,
+    template: `./src/views/${title.toLowerCase()}.html`,
+  });
+}
+
+const populateHtmlPlugins = (pagesArray) => {
+  res = [];
+  pagesArray.forEach(page => {
+    res.push(generateHtmlPlugin(page));
+  })
+  return res;
+}
+
+const pages = populateHtmlPlugins(["index", "about"]);
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -46,14 +64,8 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg)$/i,
         type: 'asset/resource'
-      }
+      },
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webpack App',
-      filename: 'index.html',
-      template: 'src/template.html'
-    })
-  ]
+  plugins: pages
 }
