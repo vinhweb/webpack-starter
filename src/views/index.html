@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+</head>
+<body class="font-body text-neutral_dark">
+
+  <%= require('html-loader!./partials/header.html').default %>
+
+  <section class="pb-10 lg:pb-12 pt-4">
+    <div class="container flex flex-col md:flex-row items-center justify-between">
+      <div class="flex flex-col space-y-5 lg:space-y-8">
+        <h2 class="font-headline leading-tight text-5xl lg:text-6xl tracking-tight">a store for every fan</h2>
+        <p class="text-lg lg:text-xl leading-normal">An Exclusive platform for claiming, upgrading, and redeeming NFTs from your favourite storefront. </p>
+        <button class="w-fit font-button text-base bg-primary text-neutral_light hover:opacity-80 transition-all rounded-full leading-none px-10 py-4">
+          Discover Marketplace
+        </button>
+      </div>
+      <div class="hidden md:block w-full">
+        <img class="my-6 block mx-auto" src="<%=require('../images/main_pages/NFT Monitoring.png') %>" alt="NFT Monitoring">
+      </div>
+    </div>
+    
+    <ul class="container grid md:grid-cols-3 gap-5 mt-8">
+      <li class="grid gap-3">
+        <img class="-ml-2" src="<%=require('../images/main_pages/feature_01.png') %>" alt="feature_01" srcset="">
+        <h3 class="font-bold texl-xl lg:text-2xl">1 Click NFT Claim</h3>
+        <p class="leading-relaxed">User interface design includes selecting and arranging interface elements </p>
+      </li>
+      <li class="grid gap-3">
+        <img class="-ml-2" src="<%=require('../images/main_pages/feature_02.png') %>" alt="feature_02" srcset="">
+        <h3 class="font-bold texl-xl lg:text-2xl">Hold, Play And Engage To Earn</h3>
+        <p class="leading-relaxed">Page layout is where these components come together, while wireframing</p>
+      </li>
+      <li class="grid gap-3">
+        <img class="-ml-2" src="<%=require('../images/main_pages/feature_03.png') %>" alt="feature_03" srcset="">
+        <h3 class="font-bold texl-xl lg:text-2xl">Exclusive Members-only Benefits</h3>
+        <p class="leading-relaxed">For complex projects, wireframes using computer software is popular</p>
+      </li>
+    </ul>
+  </section>
+
+  <%= require('html-loader!./partials/footer.html').default %>
+
+</body>
+</html>
