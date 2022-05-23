@@ -17,7 +17,7 @@ const populateHtmlPlugins = (pagesArray) => {
   return res;
 }
 
-const pages = populateHtmlPlugins(["index"]);
+const pages = populateHtmlPlugins(["index", "about"]);
 
 module.exports = {
   mode: 'development',
